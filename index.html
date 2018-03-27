@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Yarn vs. NPM</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,600i,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/jobrapido-venus.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/emoji-awesome/dist/css/facebook.min.css">
+    <script>
+    (function() {
+        'use strict';
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    })();
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        
+        <div class="slides">
+            <section data-background="lib/img/trump01.jpeg" class="trump">
+                <img src="lib/img/yarnvsnpm.png" alt="">
+                <h2 style="color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black">Make NPM great again!</h2>
+            </section>
+
+            <section>
+                <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                      <img class="yo" src="lib/img/yo.jpg" alt="Agustin Mulet">
+                      <div style="margin: 24px 0;"> 
+                        <a href="http://www.twitter.com/AgustinDMulet"><i class="fa fa-twitter"></i></a>  
+                        <a href="https://www.linkedin.com/in/agustin-mulet-71353639/"><i class="fa fa-linkedin"></i></a>
+                     </div>
+                    </div>
+                </div>
+            </div>
+                <div style="position:relative;top:50%;transform: translateY(40%)" class="col-6">
+                    <h3>Agustin Mulet</h3>
+                      <p class="title">Frontend Developer</p>
+                      <a href="http://ewwoconsulting.com/"> <img src="lib/img/ewwo.png" alt="Ewwo"> </a>
+                </div>
+            
+            </section>
+
+            <section>
+                <section>
+                    <h4>¿Qué es un package manager?</h4>
+                    <cite style="text-align: center">
+                        Herramienta que permite instalar y administrar módulos externos para proporcionar funcionalidades adicionales al sistema base.
+                        <br>Existen dos grandes ecosistemas de módulos (<a href="https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/">tres en total</a>), CommonJS (utilizado por NPM y Yarn) y globals/AMD (utilizado por Bower).
+                    </cite>
+                    <div class="image-container">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/battle.jpg">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/bower.png">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/component.png">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/npm.png">
+                        <img class="fragment" data-fragment-index="1" width="150" src="lib/img/duo.png">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/jspm.png">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/gem.ico">
+                        <img class="fragment" data-fragment-index="1" width="75" src="lib/img/pip.png">
+                    </div>
+                </section>
+                <section data-background="lib/img/trumpcat2.jpg" data-background-size="contain" class="fondo">
+                    <div>
+                        <div class="col-6">
+                        <h4>PROS</h4>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">
+                                Método uniforme para instalar paquetes y hacer un seguimiento de ellos.
+                            </li>
+                            <li class="fragment" data-fragment-index="2">
+                                Popularidad: hay miles de paquetes disponibles.
+                            </li>
+                            <li class="fragment" data-fragment-index="3">
+                                Evita reescribir código utilizando algo funcional, que ya está listo y probado.
+                                <br>
+                                <span class="fragment" data-fragment-index="4"><em>(en teoría)</em></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4>CONTRAS</h4>
+                        <ul>
+                            <li class="fragment" data-fragment-index="5">
+                                Riesgo de encontrar documentación incompleta o incorrecta. (Módulos nuevos)
+                            </li>
+                            <li class="fragment" data-fragment-index="6">
+                                Conflictos entre submódulos: durante la instalación de un módulo, NPM además instala cualquier otro módulo del que dependa el módulo instalado, utilizando la estructura jerárquica descrita en el archivo package.json.
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="col-6">
+                        <h4>Si tenés suerte...</h4>
+                        <img width="90%" src="lib/img/npm-screen-short.png" alt="">
+                    </div>
+                    <div class="col-6 fragment">
+                        <h4 style="text-align:left;">... vs. la vida real</h4>
+                        <img width="90%" src="lib/img/npm-screen-long.png" alt="">
+                    </div>
+                    <div class="fragment">
+                        (<em>Aunque esto cambia en NPM@5</em>)
+                    </div>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="lib/img/yarnpckg.jpg">
+                </section>
+                <section data-background="lib/img/yarn01.png" data-background-size="600px" class="fondo">
+                    <h4>Yarn</h4>
+                    <p>
+                        Para remediar los problemas de NPM, Facebook, Google, Exponent y Tilde decidieron juntarse para crear un nuevo administrador de paquetes.
+                    </p>
+                    <p>
+                        Es lanzado en Octubre de 2016 y posee la particularidad de catalogar e instalar dependencias según un esquema de versionado semántico (<a href="https://semver.org/lang/es/"><em>SEMVER</em></a>) lo cual permite definir un esquema de control de versiones que refleja los tipos de cambios en cada nueva versión (por ejemplo, si una modificación rompe una API, agrega una característica o corrige un bug).
+                        <br>Además implementa seguridad al verificar la integridad de los paquetes instalados antes de ejecutarlos utilizando checksums.
+                    </p>
+                    <p class="fragment">
+                        PD: Se dice que el nombre "YARN" proviene del grito que pegó el desarrollador de Facebook después del décimo problema con las dependencias de módulos usando NPM.
+                        <br>
+                        <img height="150px" src="lib/img/catwork.gif" alt="">
+                    </p>
+                </section>
+                <section data-background="lib/img/yarn02.png" data-background-size="600px" class="fondo">
+                    <p>
+                        La idea de Yarn no es reemplazar a NPM, sino mejorarlo.
+                    </p>
+                    <div class="col-6">
+                        <h4>Vanilla NPM</h4>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">
+                                NPM < 5: El cliente de NPM instala las dependencias de una manera "no determinista": el orden de instalación de las dependencias puede variar de persona a persona. Se solucionaba utilizando npm-shinkwrap que generaba una especie de lockfile.
+                                 <br>NPM@5: Implementa lockfiles como Yarn.
+                            </li>
+                            <li class="fragment" data-fragment-index="2">
+                                NPM sólo toma dependencias de su repositorio y las instala una a la vez, cosa que lo hace más lento.
+                            </li>
+                            <li class="fragment" data-fragment-index="3">
+                                NPM < 5: No permite la instalación de dependencias de forma offline.
+                                <br>NPM@5: Reescribieron toda la parte de caché y permite instalación offline, trabaja parecido a Yarn.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4>NPM + Yarn</h4>
+                        <ul>
+                            <li class="fragment" data-fragment-index="1">
+                                Gracias a lockfiles y algoritmos, Yarn permite instalar dependencias de una manera "determinista". Los lockfiles permiten que las dependencias instaladas se bloqueen a una versión específica y aseguran que cada instalación sea igual en cada máquina (ya no sirve más el "pero en mi máquina funciona").
+                            </li>
+                            <li class="fragment" data-fragment-index="2">
+                                Yarn permite instalar dependencias en paralelo, utilizando registros de NPM y Bower.
+                            </li>
+                            <li class="fragment" data-fragment-index="3">
+                                Permite almacenar en caché cualquier paquete ya instalado, lo que permite la instalación offline.
+                            </li>
+                            <li class="fragment" data-fragment-index="4">
+                                <h1>Emojis! <i class="em em-grimacing"></i></h1>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section data-background="lib/img/yarn03.png" data-background-size="600px" class="fondo">
+                    <h4>¿Cómo se instala?</h4>
+                    <pre>
+                        <code>npm install -g yarn</code>
+                    </pre>
+                    <cite class="fragment">
+                        "NPM INSTALL YARN" = es como pedirle a tu ex que te ayude a mudar a tu novia actual 😂
+                    </cite>
+                    <br>
+                    <div class="fragment">
+                        <h4>¿Cómo se inicializa?</h4>
+                        <pre>
+                        	<code>yarn init</code>
+                    	</pre>
+                        <img src="lib/img/yarn-init.png" alt="">
+                    </div>
+                </section>
+                <section data-background="lib/img/yarn01.png" data-background-size="600px" class="fondo">
+                    <h4>¿Cómo integrarlo en un proyecto ya inicializado?</h4>
+                    <pre>
+                        <code>yarn install</code>
+                    </pre>
+                    <p>Igual que antes. Yarn busca primero el archivo yarn.lock y sino el mismo package.json de Npm.</p>
+                    <img height="300px" data-src="lib/img/yarn-install.gif" alt="">
+                </section>
+                <section data-background="lib/img/yarn03.png" data-background-size="600px" class="fondo">
+                    <h4>¿Cómo funciona?</h4>
+                    <ol>
+                        <li>
+                            <strong>RESOLUTION</strong>
+                            <p>
+                                Yarn resuelve las dependencias haciendo solicitudes a los registros y buscando cada dependencia recursivamente.
+                            </p>
+                        </li>
+                        <li>
+                            <strong>FETCH</strong>
+                            <p>
+                                Yarn comprueba en la caché global si ya se ha instalado un paquete. Si no está instalado, descarga el paquete y lo guarda en la caché.
+                            </p>
+                        </li>
+                        <li>
+                            <strong>LINK</strong>
+                            <p>
+                                Yarn copia todos los archivos que necesita de la memoria caché global en la carpeta <em>"node_modules"</em>.
+                            </p>
+                        </li>
+                    </ol>
+                    <img height="250px" src="lib/img/yarn.gif" alt="">
+                </section>
+                <section data-background="lib/img/yarn02.png" data-background-size="600px" class="fondo">
+                    <h4>¿Cómo sé que es rápido?</h4>
+                    <strong>Yarn vs NPM < 5 </strong>
+                    <br><p>Pruebas instalando diferentes paquetes</p>
+                    <img src="lib/img/test01.png" alt="">
+                </section>
+                <section data-background="lib/img/yarn02.png" data-background-size="600px" class="fondo">
+                    <h4>¿Cómo sé que es rápido?</h4>
+                    <strong>Yarn vs NPM@5 </strong><br>
+                    <br><p>Pruebas instalando 1000 paquetes</p>
+                    <img src="lib/img/test02.png" alt="" height="450px">
+                </section>
+            </section>
+
+            <section>
+                <section data-background="lib/img/hypno2.gif">
+                    <h1>Entonces... <br><strong>¿Debo usar Yarn?</strong></h1>
+                </section>
+                <section data-background="lib/img/bowerwp.png">
+                </section>
+                <section>
+                	<h4>Vida y muerte de Bower</h4>
+                	<p>
+                		Bower fue creado en 2012 por Twitter, como parte de la idea de Twitter de hacerse <a href="https://twitter.github.io/">Open Source</a>.
+                		<br>Es un package manager al igual que NPM y Yarn pero orientado y optimizado para el frontend.
+                	</p>
+                	<p class="fragment">
+                		Como mejora a NPM, Bower se encargaba de resolver dependencias (cosa que Yarn tampoco puede hacer) pero <a href="https://github.com/bower/bower/issues/2298">luego de una larga charla en Github</a>, en Octubre de 2017 decidieron depreciarlo aunque lo siguen manteniendo.
+                	</p>
+                	<div class="fragment">
+                		<img height="200px" src="lib/img/bowerdead.png" alt="">
+                		<h6><em>R.I.P. Bower<br>2012-2017</em></h6>
+                	</div>
+                </section>
+                <section>
+                	 <h4>¿Cómo migrar de Bower a Yarn?</h4>
+                    <p>
+                    	Es simple:
+                    </p>
+                    <pre>
+                    	<code>npm install -g bower-away</code>
+                    </pre>
+                    <pre class="fragment" data-fragment-index="1">
+                    	<code>bower-away # repetir siguiendo los pasos</code>
+                	</pre>
+                	<div class="fragment" data-fragment-index="2">
+                		<p>Usamos bower-away para resolver las dependencias de Bower y agregarlas al package.json de forma <a href="http://4waisenkinder.de/blog/2014/06/09/flatten-your-dependencies-with-npm-dedupe/"><em>flattened</em></a> porque Yarn por sí solo no puede hacerlo...</p>
+                		<img height="150px" src="lib/img/catbird.gif" alt="">
+                	</div>
+                </section>
+                <section>
+                	<h4>¿Cómo funciona bower-away?</h4>
+                	<p style="font-size: 25px">
+                		Tal como dijimos, Yarn no sólo no puede resolver las dependencias sino que tampoco puede traducir los nombres de los componentes de Bower a los URLs de los repositorios.
+                		<br>Es ahí donde actúa bower-away y el resultado en package.json es el siguiente:
+                	</p>
+                	<pre>
+                		<code>{</code><code> dependencies: {</code><code>  "@bower_components/almond" : "jrburke/almond#~0.2.9",</code><code>  "@bower_components/angular" : "angular/bower-angular#^1.0.8",</code><code>  "@bower_components/d3" : "mbostock-bower/d3-bower#~3.3.10"</code><code> }</code><code>}</code>
+                	</pre>
+                	<p style="font-size: 25px">Luego de esto, si instalamos el package.json con Yarn, en la carpeta <i>node_modules/@bower_components</i> van a estar todos los módulos de la misma forma que si hubiesen sido instalados con Bower.</p>
+                	<p style="font-size: 25px">Ahora resta cambiar las referencias de bower_components a node_modules/@bower_components y <b>voilà!</b></p>
+                </section>
+            </section>
+            <section>
+                <section data-background-image="lib/img/cheers.jpg" class="trump">
+                    <h1 style="color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"><b>Gracias!</b><br><i class="em em-smiley" style="height:2em;width:2em"></i></h1>
+                </section>
+                <section>
+                    <div class="col-6">
+                        <h4>Links útiles</h4>
+                        <ul>
+                            <li><a href="https://yarnpkg.com/">Página de Yarn</a></li>
+                            <li><a href="https://github.com/yarnpkg/yarn/">Github de Yarn</a></li>
+                            <li><a href="https://yarnpkg.com/en/docs/migrating-from-npm">Migrando desde npm</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <h4>Fuentes</h4>
+                        <ul>
+                            <li><a href="https://code.facebook.com/posts/1840075619545360">Yarn: Un gestor de paquetes nuevo de JavaScript</a></li>
+                            <li><a href="https://scotch.io/tutorials/yarn-package-manager-an-improvement-over-npm">Gestor de paquetes Yarn: Una mejora sobre NPM</a></li>
+                            <li><a href="https://dev.to/bugsnag/replacing-npm-with-yarn">Reemplazando NPM con Yarn</a></li>
+                            <li><a href="https://medium.com/@nikjohn/facebooks-yarn-vs-npm-is-yarn-really-better-1890b3ea6515">Yarn vs NPM < 5 </a></li>
+                            <li><a href="https://medium.com/netscape/npm-5-yarn-killer-ba69737b24d0">Yarn vs NPM@5</a></li>
+                            <li><a href="https://github.com/ibbatta/yarn-presentation">Presentación de Yarn usada como base</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    (function() {
+        'use strict';
+        Reveal.initialize({
+            viewDistance: 3,
+            previewLinks: false,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'convex',
+            slideNumber: false,
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+
+    })();
+    </script>
+</body>
+
+</html>
