@@ -19,6 +19,6 @@ Una vez que está todo instalado, `grunt serve` inicia el proyecto localmente
 
 # __Créditos__
 
-[Yarn HTML Presentation]https://github.com/ibbatta/yarn-presentation (utilizada como base)
+[Yarn HTML Presentation](https://github.com/ibbatta/yarn-presentation (utilizada como base))
 
 En los slides se incluyen créditos adicionales.
